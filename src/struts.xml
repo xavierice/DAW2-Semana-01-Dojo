@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <constant name="struts.devMode" value="true" />
+
+   <include file="struts-default.xml"/>
+      
+   <package name="default" extends="struts-default" >
+   		
+   		<action name="EjemploAjax01" method="execute" class="edu.cibertec.struts2.ajax.Ejemplo01">
+			<result name="success" type="dispatcher">/ejemplo01/plantilla.jsp</result>
+		</action>
+		
+   		<action name="EjemploAjax02">
+			<result name="success" type="dispatcher">/ejemplo02/plantilla.jsp</result>
+		</action>
+		
+		<action name="EjemploAjax03-Inicio">
+			<result>/ejemplo03/plantilla.jsp</result>
+		</action>
+		<action name="EjemploAjax03-Fin" class="edu.cibertec.struts2.ajax.Ejemplo03">
+			<result name="error">/ejemplo03/login.jsp</result>
+			<result name="success">/ejemplo03/loginsuccess.jsp</result>
+		</action>
+
+		<action name="EjemploAjax04-Inicio" method="execute" class="edu.cibertec.struts2.ajax.Ejemplo01">
+			<result name="success" type="dispatcher">/ejemplo04/plantilla.jsp</result>
+		</action>
+		<action name="EjemploAjax04-Fin" method="execute" class="edu.cibertec.struts2.ajax.Ejemplo04">
+			<result name="success" type="freemarker">/ejemplo04/options.ftl</result>  
+		</action>
+		
+		<action name="EjemploAjax05-Inicio">
+			<result>/ejemplo05/plantilla.jsp</result>
+		</action>
+		
+		<action name="EjemploAjax06-Inicio">
+			<result>/ejemplo06/plantilla.jsp</result>
+		</action>
+		
+		<action name="EjemploAjax07-Inicio" class="edu.cibertec.struts2.ajax.Ejemplo07">
+			<result>/ejemplo07/plantilla.jsp</result>
+		</action>
+		
+   </package>
+   	
+</struts>
